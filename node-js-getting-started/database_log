@@ -1,0 +1,90 @@
+LOG:  database system was shut down at 2016-02-28 15:52:29 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "amora" does not exist
+FATAL:  database "amora" does not exist
+FATAL:  database "amora" does not exist
+LOG:  statistics collector process (PID 7624) exited with exit code 1
+LOG:  statistics collector process (PID 13752) exited with exit code 1
+LOG:  autovacuum launcher process (PID 10896) exited with exit code 1
+LOG:  terminating any other active server processes
+LOG:  all server processes terminated; reinitializing
+LOG:  database system was interrupted; last known up at 2016-02-28 16:08:44 EST
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  redo starts at 0/16F6778
+LOG:  invalid record length at 0/16F67A0
+LOG:  redo done at 0/16F6778
+LOG:  last completed transaction was at log time 2016-02-28 16:08:45.08802-05
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+LOG:  using stale statistics instead of current ones because stats collector is not responding
+FATAL:  database "help" does not exist
+FATAL:  database "l" does not exist
+FATAL:  database "amora" does not exist
+FATAL:  database "amora" does not exist
+ERROR:  syntax error at or near "SELECT" at character 18
+STATEMENT:  SELECT version()
+	SELECT version();
+ERROR:  syntax error at or near "INSERT" at character 68
+STATEMENT:  CREATE TABLE users (username text, pass_hash text, pass_salt text)
+	INSERT INTO users (username, pass_hash, pass_salt) bob, joseph, mary
+	select * from users
+	;
+ERROR:  syntax error at or near "DESCRIBE" at character 1
+STATEMENT:  DESCRIBE TABLE users
+	;
+ERROR:  syntax error at or near "DESCRIBE" at character 1
+STATEMENT:  DESCRIBE TABLE users;
+ERROR:  syntax error at or near "adam" at character 24
+STATEMENT:  insert into test_table adam '{who: 34}'
+	;
+ERROR:  syntax error at or near "'adam'" at character 24
+STATEMENT:  insert into test_table 'adam' '{who: 34}'
+	;
+ERROR:  syntax error at or near ""Adam"" at character 24
+STATEMENT:  insert into test_table "Adam" "{who: 34}"
+	;
+ERROR:  syntax error at or near ""{who: 34}"" at character 38
+STATEMENT:  insert into test_table values("Adam" "{who: 34}")
+	;
+ERROR:  column "Adam" does not exist at character 31
+STATEMENT:  insert into test_table values("Adam", "{who: 34}")
+	;
+ERROR:  syntax error at or near ""Adam"" at character 44
+STATEMENT:  insert into test_table (name, data) values "Adam", "{hi: 'what'}"
+	;
+ERROR:  column "Adam" does not exist at character 45
+STATEMENT:  insert into test_table (name, data) values ("Adam", "{hi: 'what'}");
+ERROR:  invalid input syntax for type json at character 40
+DETAIL:  Token "Hello" is invalid.
+CONTEXT:  JSON data, line 1: Hello
+STATEMENT:  INSERT INTO test_table VALUES ('Adam', 'Hello');
+ERROR:  syntax error at or near "select" at character 26
+STATEMENT:  select * from test_tbale
+	select * from test_talbe
+	;
+ERROR:  column "Adam" does not exist at character 32
+STATEMENT:  INSERT INTO test_table VALUES ("Adam", "{hi: 23}");
+ERROR:  column "Adam" does not exist at character 45
+STATEMENT:  INSERT INTO test_table (name, data) VALUES ("Adam", "{hi: 23}");
+ERROR:  syntax error at or near "pdt" at character 23
+STATEMENT:  drop table test_table
+	pdt
+	drop table;
+ERROR:  syntax error at or near "clear" at character 1
+STATEMENT:  clear
+	cls
+	;
+ERROR:  column "Adam" does not exist at character 32
+STATEMENT:  insert into test_table values ("Adam" , 234);
+ERROR:  column "Adam" does not exist at character 43
+STATEMENT:  insert into test_table (name, id) values ("Adam" , 1);
+ERROR:  column "Adam" does not exist at character 47
+STATEMENT:  INSERT INTO test_table ("name", "id") VALUES ("Adam", 23);
+LOG:  could not receive data from client: No connection could be made because the target machine actively refused it.
+	
+LOG:  could not receive data from client: No connection could be made because the target machine actively refused it.
+	
